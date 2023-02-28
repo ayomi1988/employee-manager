@@ -32,7 +32,7 @@ https://documenter.getpostman.com/view/26058571/2s93CRKrH1#5af7d4d3-ca5a-44ba-8e
 
 # high-level architecture diagram 
 
-![Alt text](https://drive.google.com/file/d/1jDiAgr4zSg0DTR3g66DNWCwIVTrsHz_7/view?usp=sharing "a title")
+![Alt text](<a href="https://ibb.co/PCkygHc"><img src="https://i.ibb.co/zfdgZvX/high-level-architecture-diagram.png" alt="high-level-architecture-diagram" border="0"></a>" diagram")
 
 
 # Folder structure
