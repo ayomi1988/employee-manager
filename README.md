@@ -2,10 +2,10 @@
 
 This Employee Manager web App has been developed using bellow tech stacks
 
--React, Typescript, Node
--DB created using Mango DB
--API Testing - Postman
-
+```bash
+-React, Typescript, Node,Mango DB.
+ ```
+ 
 # To start the web app follow bellow instructions;
  
  
