@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3001';
+export const BASE_URL = "https://employee-manager-backendsw.onrender.com";
 
 export const EMPLOYE_GETALL_API = '/api/employees';
 export const EMPLOYE_GET_SINGLE_API = (empId:string = '') => `/api/employees/${empId}`;
