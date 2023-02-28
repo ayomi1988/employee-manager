@@ -3,7 +3,7 @@
 This Employee Manager web App has been developed using bellow tech stacks
 
 ```bash
--React, Typescript, Node,Mango DB.
+-React, Typescript, Node,MangoDB.
  ```
  
 # To start the web app follow bellow instructions;
