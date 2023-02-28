@@ -1,42 +1,34 @@
-# This is first react assignment using typescript
+# First react assignment using typescript
 
-# getting started
- there was Backend and frontend both include here
- first needs to run Backend
+This Employee Manager web App has been developed using bellow tech stacks
+
+-React, Typescript, Node
+-DB created using Mango DB
+-API Testing - Postman
+
+# To start the web app follow bellow instructions;
+ 
+ 
+ 1. Navigate to the backend directory and run bellow commands;
  ```bash
- yarn install
- yarn run start
+ npm install
+ npm run start
  ```
 
- then needs to run frontend
+ 2. Navigate to the frontend directory and run bellow commands
  ```bash
-yarn install
-yarn run start
+npm install
+npm run start
 ```
-Backend can test using
+3. To test both the backend and frontend environments run bellow command inside the directory
 ```bash
-yarn run test
+npm run test
 ```
 
-frontend can test using
-```bash
-yarn run test
-``` 
-tech stack use here
+# API Document
 
-1.Node
-2.React
-3.typescript
-4.MongoDB
+https://documenter.getpostman.com/view/26058571/2s93CRKrH1#5af7d4d3-ca5a-44ba-8e05-a2772518cd70
 
-this application deploy in Heroku
 
-API URL : https://employe-be.herokuapp.com/
-APP URL : https://employe-fe.herokuapp.com/employe/list
-
-# API documentation  
-https://documenter.getpostman.com/view/249099/2s935itS1k
-
-# Sentry's React SDK enables automatic reporting of errors and exceptions
 
 
