@@ -6,7 +6,10 @@
   "scripts": {
     "start": "nodemon src/server.ts",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "prod": "ts-node dist/app.js",
+    "build": "tsc -p ."
+    
   },
   "keywords": [],
   "author": "",
