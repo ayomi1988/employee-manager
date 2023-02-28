@@ -37,6 +37,7 @@ https://drive.google.com/file/d/1jDiAgr4zSg0DTR3g66DNWCwIVTrsHz_7/view?usp=shari
 
 # Folder structure
 
+```bash
 employee-manager
   backend
     src
@@ -118,7 +119,7 @@ employee-manager
       index.tsx
       Route.tsx
      
-     
+     ```
      
 
 
