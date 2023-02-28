@@ -1,42 +1,124 @@
-# This is first react assignment using typescript
+# First react assignment using typescript
 
-# getting started
- there was Backend and frontend both include here
- first needs to run Backend
+This Employee Manager web App has been developed using bellow tech stacks
+
+```bash
+-React, Typescript, Node,MangoDB.
+ ```
+ 
+# To start the web app follow bellow instructions;
+ 
+ 
+ 1. Navigate to the backend directory and run bellow commands;
  ```bash
- yarn install
- yarn run start
+ npm install
+ npm run start
  ```
 
- then needs to run frontend
+ 2. Navigate to the frontend directory and run bellow commands
  ```bash
-yarn install
-yarn run start
+npm install
+npm run start
 ```
-Backend can test using
+3. To test both the backend and frontend environments run bellow command inside the directory
 ```bash
-yarn run test
+npm run test
 ```
 
-frontend can test using
+# API Document
+
+https://documenter.getpostman.com/view/26058571/2s93CRKrH1#5af7d4d3-ca5a-44ba-8e05-a2772518cd70
+
+
+# high-level architecture diagram 
+
+<a href="https://ibb.co/PCkygHc"><img src="https://i.ibb.co/zfdgZvX/high-level-architecture-diagram.png" alt="high-level-architecture-diagram" border="0"></a>
+
+
+# Folder structure
+
 ```bash
-yarn run test
-``` 
-tech stack use here
-
-1.Node
-2.React
-3.typescript
-4.MongoDB
-
-this application deploy in Heroku
-
-API URL : https://employe-be.herokuapp.com/
-APP URL : https://employe-fe.herokuapp.com/employe/list
-
-# API documentation  
-https://documenter.getpostman.com/view/249099/2s935itS1k
-
-# Sentry's React SDK enables automatic reporting of errors and exceptions
-
+employee-manager/
+├── backend/
+│   └── src/
+│       ├── __tests__/
+│       │   └── emp.test.ts
+│       ├── config/
+│       │   ├── config.ts
+│       │   └── connection.ts
+│       ├── controller/
+│       │   └── employe.controller.ts
+│       ├── interface/
+│       │   └── interface.ts
+│       ├── logs/
+│       │   └── logger.ts
+│       ├── model/
+│       │   └── model.ts
+│       ├── route/
+│       │   └── employe.route.ts
+│       ├── service/
+│       │   └── employe.service.ts
+│       ├── validation/
+│       │   └── validationSchema.ts
+│       ├── app.ts
+│       └── server.ts/
+│           ├── diagram!
+│           └── :)
+└── frontend/
+    └── src/
+        ├── api/
+        │   └── api.ts
+        ├── components/
+        │   ├── Alerts/
+        │   │   └── Alerts.tsx
+        │   ├── buttons/
+        │   │   ├── ButtonAction.tsx
+        │   │   ├── ButtonBack.tsx
+        │   │   ├── ButtonDelete.tsx
+        │   │   ├── ButtonEdit.tsx
+        │   │   ├── ButtonGrid.tsx
+        │   │   ├── ButtonList.tsx
+        │   │   ├── ButtonPrimary.tsx
+        │   │   └── ButtonTypes.tsx
+        │   ├── form/
+        │   │   ├── EmployeForm.tsx
+        │   │   ├── EmployeTypes.tsx
+        │   │   ├── InputField.tsx
+        │   │   └── SelectField.tsx
+        │   ├── header/
+        │   │   ├── index.tsx
+        │   │   ├── Search.tsx
+        │   │   └── TitleBar.tsx
+        │   ├── loader/
+        │   │   └── Loader.tsx
+        │   ├── table/
+        │   │   ├── TableCells.tsx
+        │   │   └── types.tsx
+        │   ├── EmployeeListGrid.tsx
+        │   └── EmployeListTable.tsx
+        ├── pages/
+        │   ├── EmpDataManager.test.tsx
+        │   ├── EmpDataManager.tsx
+        │   ├── EmployeAdd.tsx
+        │   ├── NoResults.tsx
+        │   └── PageNotfound.tsx
+        ├── store/
+        │   ├── EmpServices.ts
+        │   ├── EmpSlice.tsx
+        │   ├── index.ts
+        │   └── useDispatch.ts
+        ├── theme/
+        │   ├── CustomTheme.ts
+        │   └── MainLayout.tsx
+        ├── Validation/
+        │   ├── EmployeSchema.tsx
+        │   ├── EmpSlice.tsx
+        │   ├── index.ts
+        │   └── useDispatch.ts
+        ├── App.tsx
+        ├── index.tsx
+        └── Route.tsx
+     
+     ```
+  
 
