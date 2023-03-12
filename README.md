@@ -30,6 +30,16 @@ npm run test
 https://documenter.getpostman.com/view/26058571/2s93CRKrH1#5af7d4d3-ca5a-44ba-8e05-a2772518cd70
 
 
+# Frontend
+
+https://empreactfe.herokuapp.com/
+
+
+# Backend
+
+https://empreact.herokuapp.com/api/employees
+
+
 # high-level architecture diagram 
 
 <a href="https://ibb.co/PCkygHc"><img src="https://i.ibb.co/zfdgZvX/high-level-architecture-diagram.png" alt="high-level-architecture-diagram" border="0"></a>
