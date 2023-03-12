@@ -1,25 +1,36 @@
-import { Grid, InputLabel, FilledInput, FormHelperText } from '@mui/material';
+import { Grid,FormHelperText, InputLabel, FilledInput } from '@mui/material';
 import { Controller,Control } from 'react-hook-form';
-import { Employe } from '../../components/form/EmployeTypes';
+
+type Employee = {
+    _id?: string;
+    first_name: string;
+    last_name: string;
+    email: string;
+    number: string;
+    gender: string;
+    photo: string;
+  }
 
 type InputViewProps = {
     label:string;
-    control:Control<Employe> | undefined;
+    control:Control<Employee> | undefined;
     error?:string;
     titleName: any;
+    id?:string;
 };
 
-const InputField = ({label,control,error,titleName}: InputViewProps) => {
+
+const InputField = ({label,control,error,titleName, id}: InputViewProps) => {
     return (
         
         <Grid container>
-            <Grid md={4}><InputLabel required htmlFor={`${label}-id`} id={`${label}-id`}>{label}</InputLabel></Grid>
+            <Grid md={4}><InputLabel htmlFor={`${label}-id`} id={`${label}-id`}>{label}</InputLabel></Grid>
             <Grid md={8}>
                 <Controller
                 control={control}
                 name={titleName}
                 render={({field})=>(
-                        <FilledInput
+                        <FilledInput                  
                         id={label}
                         placeholder={label}                    
                         {...field}
@@ -31,8 +42,7 @@ const InputField = ({label,control,error,titleName}: InputViewProps) => {
                 />
                 <FormHelperText color='red'>{error}</FormHelperText>
             </Grid>
-        </Grid>
-            
+        </Grid>          
             
         
     );

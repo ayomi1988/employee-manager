@@ -1,5 +1,4 @@
 import axios,{ AxiosError } from "axios";
-import { Employe } from "../components/form/EmployeTypes";
 import {
   BASE_URL,
   EMPLOYE_DELETE_API,
@@ -8,6 +7,17 @@ import {
   EMPLOYE_POST_API,
   EMPLOYE_UPDATE_API,
 } from "../api/api";
+
+
+type Employe = {
+  _id?: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+  number: string;
+  gender: string;
+  photo: string;
+}
 
 const employeApi = axios.create({
   baseURL: BASE_URL,

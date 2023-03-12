@@ -1,18 +1,37 @@
 import ValidationSchema from "../Validation/EmployeSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
-import {AlertMessage} from '../components/Alerts/Alerts';
+import {AlertMessage} from '../components/atoms/Alerts';
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
-import { Container, Grid, Toolbar } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { useAppDispatch } from "../store/useDispatch";
 import { useSelector } from "react-redux";
-import { Employe, StateValue } from "../components/form/EmployeTypes";
-import EmployeForm from "../components/form/EmployeForm";
-import ButtonBack from "../components/buttons/ButtonBack";
+import EmployeForm from "../components/organisms/Form";
 import { fetchEmployeById, createEmploye, updateEmploye } from "../store/EmpSlice";
 import { unwrapResult } from "@reduxjs/toolkit";
 
+export type Employe = {
+  _id?: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+  number: string;
+  gender: string;
+  photo: string;
+}
+
+export type EmployeList = {
+  data: string[];
+  loading:boolean;
+  message:string;
+  error?:string;
+  singleRecord: Employe;
+}
+
+export type StateValue = {
+  employee: EmployeList
+}
 
 const EmployeAction = () => {
   
@@ -81,12 +100,7 @@ const EmployeAction = () => {
 
   return (
     <Grid container spacing={2}>
-      <Toolbar sx={{display:'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center'}}>
-        <ButtonBack
-          name={"Go Back"}
-          redirectPath={"/employees/list"}
-        />
-      </Toolbar>    
+        
       <Container sx={{marginTop: '60px'}}> 
         <EmployeForm
           handleSubmit={handleSubmit(onSubmit)}

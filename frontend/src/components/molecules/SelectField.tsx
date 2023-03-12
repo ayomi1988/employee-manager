@@ -1,12 +1,15 @@
-import { Employe } from "../../components/form/EmployeTypes";
 import { Control,Controller } from "react-hook-form";
-import {
-  FormControl,
-  FormHelperText,
-  InputLabel,
-  MenuItem,
-  Select,
-} from "@mui/material";
+import { FormControl, FormHelperText, InputLabel, MenuItem, Select, } from "@mui/material";
+
+type Employe = {
+  _id?: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+  number: string;
+  gender: string;
+  photo: string;
+}
 
 type SelectBoxProps = {
   control: Control<Employe> | undefined;
