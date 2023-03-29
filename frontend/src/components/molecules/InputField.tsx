@@ -24,14 +24,14 @@ const InputField = ({label,control,error,titleName, id}: InputViewProps) => {
     return (
         
         <Grid container>
-            <Grid md={4}><InputLabel htmlFor={`${label}-id`} id={`${label}-id`}>{label}</InputLabel></Grid>
-            <Grid md={8}>
+            <Grid item md={4}><InputLabel htmlFor={`${label}-id`} id={`${label}-id`}>{label}</InputLabel></Grid>
+            <Grid item md={8}>
                 <Controller
                 control={control}
                 name={titleName}
                 render={({field})=>(
                         <FilledInput                  
-                        id={label}
+                        id={titleName}
                         placeholder={label}                    
                         {...field}
                         error={Boolean(error)}

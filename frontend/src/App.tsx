@@ -3,12 +3,13 @@ import {
   BrowserRouter as Router,
 } from 'react-router-dom';
 
+
 const App =()=> {
   return (
-    <Router>
-    <RouteList/>
+    <Router>    
+      <RouteList/>
     </Router>
   );
 }
 
-export default App;
+ export default App;

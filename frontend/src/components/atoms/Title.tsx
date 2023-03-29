@@ -1,8 +1,9 @@
 import {Typography} from '@mui/material';
 
-export default function TitleBar() {
+const TitleBar: React.FC = () => {
   return (
-   
-         <Typography variant="h6">Employee Manager</Typography> 
-  )
+    <Typography data-cy="title" variant="h6">Employee Manager</Typography>
+  );
 };
+
+export default TitleBar;

@@ -26,7 +26,7 @@ export type Props = {
 function ActionButton ({ formData, id }: ActionProps) {
 
   return (
-    <Button fullWidth variant="contained" type="submit" disabled={formData}>
+    <Button data-cy="submit-button" fullWidth variant="contained" type="submit" disabled={formData}>
     {id ? 'Update' : 'Submit'}
 </Button>
   )
@@ -45,7 +45,7 @@ function ButtonBack ({name,redirectPath}: BackProps)  {
     const navigate = useNavigate();
 
     return (
-        <Button variant="contained" onClick={()=>{navigate(redirectPath);}} startIcon={<ArrowBackIcon />}>
+        <Button data-cy="back-button" variant="contained" onClick={()=>{navigate(redirectPath);}} startIcon={<ArrowBackIcon />}>
        {name}
         </Button>
     );
@@ -62,7 +62,7 @@ export type CommonProps = {
 
 function DeleteButton ({ onClick, id }: CommonProps)   {
     return (
-      <Button variant="contained" onClick={() => onClick(id)} startIcon={<DeleteIcon />}/>
+      <Button data-cy="delete-icon" variant="contained" onClick={() => onClick(id)} startIcon={<DeleteIcon />}/>
     )
   };
 
@@ -72,7 +72,7 @@ function DeleteButton ({ onClick, id }: CommonProps)   {
 
 function ButtonEdit ({ onClick, id }: CommonProps)  {
     return (
-      <Button variant="contained" onClick={() => onClick(id)} startIcon={<HowToRegIcon />} />
+      <Button data-cy="edit-icon" variant="contained" onClick={() => onClick(id)} startIcon={<HowToRegIcon />} />
     )
   };
 
@@ -95,7 +95,7 @@ function ButtonGrid ({ onClick}: IcoProps)  {
 
 function ButtonList ({ onClick }: IcoProps)  {
     return (
-      <Button variant="contained" onClick={() => onClick()} startIcon={<ViewListIcon />}  />
+      <Button data-cy="list-icon" variant="contained" onClick={() => onClick()} startIcon={<ViewListIcon />}  />
     )
   };
 

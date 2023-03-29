@@ -3,7 +3,9 @@ import { connectMongoDB } from "./config/connection";
 import employeRote from "./route/employe.route";
 import cors from "cors";
 
+
 const app = express();
+
 
 connectMongoDB();
 

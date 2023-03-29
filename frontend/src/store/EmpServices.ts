@@ -29,7 +29,7 @@ const employeApi = axios.create({
 export const getAllEmployeeAPI = async () => {
   try {
     const response = await employeApi.get(EMPLOYE_GETALL_API);
-    return response.data;
+    return response.data.data;
   } catch (error: any) {
     console.error(error);
     let err = error as AxiosError;
@@ -50,7 +50,7 @@ export const postEmployeAPI = async (employe: Employe) => {
 export const getEmployeByIdAPI = async (empId: string) => {
   try {
     const response = await employeApi.get(EMPLOYE_GET_SINGLE_API(empId));
-    return response.data;
+    return response.data.data;
   } catch (error: any) {
     console.error(error);
     let err = error as AxiosError;

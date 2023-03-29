@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@cypress/react": "^7.0.3",
+    "history": "^5.3.0"
+  }
+}

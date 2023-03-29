@@ -12,6 +12,10 @@ import {
   itemUpdateSchemaValidation,
 } from "../validation/validationSchema";
 import { log } from "../logs/logger";
+import {
+  successApiResponse,
+  errorsApiResponse,
+} from "../helpers/response_handler";
 
 /**
  * Delete Employee By ID
@@ -23,10 +27,10 @@ const deleteEmployee = async (req: Request, res: Response) => {
   const id = req.params.empId;
   try {
     await deleteEmploye(id);
-    res.status(200).json({ message: "Deleted Successfully" });
+    successApiResponse(res, "", "Deleted Successfully", 200);
   } catch (e) {
     log.info(e);
-    return res.json(403).json({ status: "error", error: e });
+    errorsApiResponse(res, e);
   }
 };
 
@@ -43,10 +47,10 @@ const getAllEmploye = async (req: Request, res: any) => {
   }
   try {
     const data = await getAllEmployee();
-    res.status(200).json(data);
+    successApiResponse(res, data, null, 200);
   } catch (e) {
     log.info(e);
-    return res.json(403).json({ status: "error", error: e });
+    errorsApiResponse(res, e);
   }
 };
 
@@ -59,10 +63,10 @@ const getAllEmploye = async (req: Request, res: any) => {
 const getEmpById = async (req: Request, res: any) => {
   try {
     const data = await getEmployeByID(req.params.empId);
-    res.status(200).json(data);
+    successApiResponse(res, data, null, 200);
   } catch (e) {
     log.info(e);
-    return res.json(403).json({ status: "error", error: e });
+    errorsApiResponse(res, e);
   }
 };
 
@@ -76,14 +80,14 @@ const createEmployee = async (req: Request, res: Response) => {
   const { error, value } = itemSchemaValidation.validate(req.body);
   console.log(error);
   if (error) {
-    return res.json(400).json({ error: error });
+    errorsApiResponse(res, error.details, "Validation failed.", 409);
   }
   try {
     const data = await createEmploye(value);
-    res.status(201).json(data);
+    successApiResponse(res, data, null, 201);
   } catch (e) {
     log.info(e);
-    return res.json(403).json({ status: "error", error: e });
+    errorsApiResponse(res, e);
   }
 };
 
@@ -97,14 +101,14 @@ const updateEmployee = async (req: Request, res: Response) => {
   const { error, value } = itemUpdateSchemaValidation.validate(req.body);
   const id = req.params.empId;
   if (error) {
-    return res.json(400).json({ error: error });
+    errorsApiResponse(res, error.details, "Validation failed.", 409);
   }
   try {
     await updateEmployeData(value, id);
-    res.status(200).json({ message: "Updated Successfully" });
+    successApiResponse(res, "", "Updated Successfully", 200);
   } catch (e) {
     log.info(e);
-    return res.json(400).json({ status: "error", error: e });
+    errorsApiResponse(res, e);
   }
 };
 

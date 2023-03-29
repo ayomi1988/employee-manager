@@ -89,29 +89,32 @@ const createEmploye = async (value: Employe) => {
 const updateEmployeData = async (value: Employe, id: string) => {
   const { first_name, last_name, email, number, gender, photo } = value;
   try {
-    const updatedEmploye = await Employees.findById(id).exec();
-    if (!updatedEmploye) {
-      throw Error;
-    }
-    if (first_name) {
-      updatedEmploye.first_name = first_name;
-    }
-    if (last_name) {
-      updatedEmploye.last_name = last_name;
-    }
-    if (email) {
-      updatedEmploye.email = email;
-    }
-    if (number) {
-      updatedEmploye.number = number;
-    }
-    if (gender) {
-      updatedEmploye.gender = gender;
-    }
-    if (photo) {
-      updatedEmploye.photo = photo;
-    }
-    updatedEmploye.save();
+
+    Employees.findByIdAndUpdate(
+      id,
+      {
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        number: number,
+        gender: gender,
+        photo: photo,
+      },
+      function (err, docs) {
+        if (err) {
+          throw err;
+        } else {
+          console.log("Updated User : ", docs);
+        }
+      }
+    );
+
+
+
+
+
+
+
   } catch (e) {
     log.info(e);
   }

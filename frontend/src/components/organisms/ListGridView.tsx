@@ -37,7 +37,7 @@ export type EmployeList = {
     employee: EmployeList
   }
 
-export default function EmpData() {
+export default function EmpData() {  
   const dispatch = useAppDispatch();
   const [isView, setIsView] = useState(true);
   const navigate = useNavigate();
@@ -46,17 +46,15 @@ export default function EmpData() {
  //get Employe list
 
   const getEmployeeLists = useRef(
-    debounce(() => {
+    debounce(() => {      
       dispatch(fetchEmployee())
         .unwrap()
         .then((data) => {})
-        .catch((obj) => {
-          AlertMessage('Something went wrong','error');
-        });
     }, 600)
   ).current;
 
   useEffect(() => {
+   // throw Error();
     getEmployeeLists();
   }, [getEmployeeLists]);
 
@@ -91,16 +89,12 @@ export default function EmpData() {
         dispatch(fetchEmployee());
         AlertMessage('Successfully deleted !','success');
       })
-      .catch((obj: { message: any }) => {
-        console.log(obj.message);
-        AlertMessage('Error on delete !','error');
-      });
   };
 
  
 // redirect to list page into edit page
  
-  const redirectToEdit = (id: string) => {
+  const redirectToEdit = (id: string) => {    
     navigate(`/employees/edit/${id}`);
   };
 
@@ -117,15 +111,14 @@ export default function EmpData() {
   }
 
   return (
-    <Grid container rowSpacing={3} columnSpacing={3}>
-     
-      {data.length === 0 ? (
+    <Grid data-cy="grid-container" container rowSpacing={3} columnSpacing={3}>
+      
+      {data.length === 0 ? ( 
         <Loader />
       ) : isView ? (
         <>
        <Stack width="100%" direction="row" justifyContent="end" alignItems="end" spacing={2}>    
-        
-        <Button component={Link} to="/employees/add" variant="contained">Add Employee</Button>        
+        <Button data-cy="add-button" component={Link} to="/employees/add" variant="contained">Add Employee</Button>        
         <ButtonList onClick={ChangingView}/>     
 
       </Stack>
@@ -140,7 +133,7 @@ export default function EmpData() {
         <>
         <Stack width="100%" direction="row" justifyContent="end" alignItems="end" spacing={2}>
 
-        <Button component={Link} to="/employees/add" variant="contained">Add Employee</Button>
+        <Button data-cy="add-button" component={Link} to="/employees/add" variant="contained">Add Employee</Button>
         <ButtonGrid onClick={ChangingView}/>     
 
       </Stack>
