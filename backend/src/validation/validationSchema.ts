@@ -11,9 +11,9 @@ const itemSchemaValidation = Joi.object({
 
 const itemUpdateSchemaValidation = Joi.object({
   _id:Joi.string(),
-  first_name: Joi.string().required(),
-  last_name: Joi.string().required(),
-  email: Joi.string().email().required(),
+  first_name: Joi.string().optional(),
+  last_name: Joi.string().optional(),
+  email: Joi.string().email().optional(),
   number: Joi.string(),
   gender: Joi.string(),
   photo: Joi.string(),
